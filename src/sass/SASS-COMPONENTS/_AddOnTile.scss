@@ -1,0 +1,42 @@
+@use "../SASS-TOOLKIT/all" as *;
+@use "../classesANDxtends" as *;
+
+.Tile {
+  border: 1px solid $Light-gray;
+  outline: 1px solid $Purplish-blue;
+  border-radius: 7px;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: min-content 1fr min-content;
+  align-items: center;
+  background: $Alabaster;
+
+  .Tick-mark {
+    border-radius: 4px;
+    width: 1.2rem;
+    aspect-ratio: 1/1;
+    background: url("/public/assets/images/icon-checkmark.svg") center/12px
+      no-repeat blue;
+    margin-right: 1rem;
+    
+  }
+
+  .Discription {
+    h3 {
+      @include fonting(1.1rem, "Ubuntu-B");
+      color: $Marine-blue;
+      margin-bottom: 4px;
+    }
+
+    p {
+      @include fonting(1rem, "Ubuntu-R");
+      color: $Cool-gray;
+    }
+  }
+
+  .Rate {
+    @include fonting(1rem, "Ubuntu-R");
+    color: $Purplish-blue;
+  }
+}

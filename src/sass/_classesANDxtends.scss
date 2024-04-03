@@ -1,0 +1,33 @@
+@use "./SASS-TOOLKIT/all" as *;
+
+//CLASSES
+.Hidden {
+  display: none;
+}
+
+.Hr-line{
+  border: 1px solid $Light-gray;
+}
+
+//EXTENDS
+%center-item {
+  display: grid;
+  place-items: center;
+}
+
+%slide-heading {
+  @include fonting(2rem, "Ubuntu-B");
+  color: $Marine-blue;
+  margin-bottom: 10px;
+}
+
+%slide-para {
+  @include fonting(1rem, "Ubuntu-M");
+  color: $Cool-gray;
+}
+
+%gap-bw{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

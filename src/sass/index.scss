@@ -1,0 +1,219 @@
+//ADDING COMPONENTS
+@use "./SASS-COMPONENTS/Step.scss";
+@use "./SASS-COMPONENTS/InputBox";
+@use "./SASS-COMPONENTS/Card";
+@use "./SASS-COMPONENTS/AddOnTile";
+
+//ADDING STYLES
+@use "./SASS-TOOLKIT/all.scss" as *;
+@use "./classesANDxtends" as *;
+
+//MAIN
+
+.Page {
+  @extend %center-item;
+  min-height: 100vh;
+  background: $Light-gray;
+  padding: 0 2rem;
+
+  .Container {
+    width: 100%;
+    max-width: 1000px;
+    aspect-ratio: 3/2;
+    padding: 1rem;
+    border-radius: 15px;
+    background: $White;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: 1fr 2fr;
+
+    .Left-Hand {
+      padding: 2rem;
+      border-radius: 10px;
+      background: url("/public/assets/images/bg-sidebar-desktop.svg")
+        center/cover no-repeat;
+    }
+
+    .Right-Hand {
+      display: grid;
+      grid-template-rows: 1fr 4rem;
+      padding: 3rem 0 1rem 0;
+      width: 100%;
+      max-width: 453px;
+      margin: 0 auto;
+
+      .Slide-Box {
+        .Slide-One {
+          h1 {
+            @extend %slide-heading;
+          }
+
+          p {
+            @extend %slide-para;
+          }
+
+          form {
+            padding: 2rem 0;
+          }
+        }
+
+        .Slide-Two {
+          h1 {
+            @extend %slide-heading;
+          }
+
+          p {
+            @extend %slide-para;
+          }
+
+          .Card-Box {
+            margin-top: 3rem;
+            display: flex;
+            gap: 1rem;
+          }
+
+          .ToogleBtn-Box {
+            margin-top: 2.5rem;
+            @extend %center-item;
+            width: 100%;
+            padding: 1rem;
+            background: $Alabaster;
+            border-radius: 5px;
+
+            button {
+              width: 2.5rem;
+              aspect-ratio: 3/1;
+              border: none;
+              background: $Marine-blue;
+              padding: 5px;
+              border-radius: 16px;
+              position: relative;
+
+              .Circle {
+                width: 12px;
+                aspect-ratio: 1/1;
+                border-radius: 50%;
+                background: $White;
+              }
+
+              &::after,
+              &::before {
+                @include fonting(1rem, "Ubuntu-M");
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+              }
+
+              &::before {
+                content: "Monthly";
+                right: calc(100% + 1.5rem);
+                color: $Marine-blue;
+              }
+
+              &::after {
+                content: "Yearly";
+                left: calc(100% + 1.5rem);
+                color: $Cool-gray;
+              }
+            }
+          }
+        }
+
+        .Slide-Three {
+          h1 {
+            @extend %slide-heading;
+          }
+
+          & > p {
+            @extend %slide-para;
+          }
+
+          .Add-On-Tile-Box{
+            margin-top: 3rem;
+          }
+        }
+
+        .Slide-Four{
+          h1 {
+            @extend %slide-heading;
+          }
+
+          & > p {
+            @extend %slide-para;
+          }
+
+          .Finishing-Table{
+            width: 100%;
+            border-radius: 10px;
+            background-color: $Alabaster;
+            padding: 1.5rem;
+            margin: 3rem 0;
+
+            h1{
+              @include fonting(1rem, 'Ubuntu-B');
+              color: $Marine-blue;
+              @extend %gap-bw;
+              margin-bottom: 1.5rem;
+            }
+
+            h2{
+              @include fonting(15px, 'Ubuntu-M');
+              color: $Cool-gray;
+              @extend %gap-bw;
+
+              &:not(:nth-of-type(2)){
+                margin: 1rem 0;
+              }
+            }
+          }
+
+          .Total-sum{
+            padding: 0 1.5rem;
+            @extend %gap-bw;
+            @include fonting(15px, 'Ubuntu-M');
+            color: $Cool-gray;
+
+            & :nth-child(2){
+              color: $Purplish-blue;
+              font-size: 1.2rem;
+              font-weight: bold;
+            }
+          }
+        }
+      }
+
+      .Button-Box {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        & :first-child {
+          @include fonting(1rem, "Ubuntu-M");
+          color: $Cool-gray;
+          border: none;
+          background: transparent;
+
+          &:hover {
+            color: $Marine-blue;
+            cursor: pointer;
+          }
+        }
+
+        & :last-child {
+          @include fonting(1rem, "Ubuntu-M");
+          border: none;
+          color: $White;
+          background: $Marine-blue;
+          border-radius: 7px;
+          padding: 1rem 2rem;
+
+          &:hover {
+            background: mix($White, $Marine-blue, 10%);
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}

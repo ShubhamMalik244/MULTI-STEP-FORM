@@ -1,0 +1,43 @@
+@use '../SASS-TOOLKIT/all' as *;
+@use '../classesANDxtends' as *;
+
+.Input-Box{
+    margin-bottom: 1.4rem;
+    
+    label{
+        @include fonting(1rem, 'Ubuntu-M');
+        color: $Marine-blue;
+        display: block;
+        margin-bottom: 10px;
+        position: relative;
+
+        &::after{
+            content: 'This field is required';
+            position: absolute;
+            right: 0;
+            color: $Strawberry-red;
+        }
+    }
+
+    input{
+        width: 100%;
+        @include fonting(1.1rem, 'Ubuntu-M');
+        color: $Marine-blue;
+        padding: 1rem;
+        border-radius: 7px;
+        outline: none;
+        border: 1px solid $Light-gray;
+
+        &::placeholder{
+            color: $Cool-gray;
+        }
+
+        &:focus{
+            outline: 1px solid $Purplish-blue;
+        }
+
+        &:hover{
+            cursor: pointer;
+        }
+    }
+}

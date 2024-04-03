@@ -1,0 +1,42 @@
+@use "../SASS-TOOLKIT/all" as *;
+@use "../classesANDxtends" as *;
+
+.Card{
+    border: 1px solid $Light-gray;
+    flex-grow: 1;
+    flex-basis: 0;
+    aspect-ratio: 1 / 1.2;
+    padding: 1rem;
+    border-radius: 7px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 3rem;
+
+    &:hover{
+        outline: 1px solid $Purplish-blue;
+    }
+
+    
+
+    img{
+        width: 2.5rem;
+    }
+
+    h2{
+        @include fonting(1.1rem, 'Ubuntu-B');
+        color: $Marine-blue;
+    }
+
+    p{
+        @include fonting(1rem, 'Ubuntu-M');
+        color: $Cool-gray;
+        margin-top: 5px;
+    }
+
+    h3{
+        @include fonting(14px, 'Ubuntu-M');
+        color: $Marine-blue;
+        margin-top: 5px;
+    }
+}

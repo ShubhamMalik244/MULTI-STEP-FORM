@@ -1,0 +1,308 @@
+@font-face {
+  font-family: "Ubuntu-B";
+  src: url("/public/assets/fonts/Ubuntu-Bold.ttf");
+}
+@font-face {
+  font-family: "Ubuntu-M";
+  src: url("/public/assets/fonts/Ubuntu-Medium.ttf");
+}
+@font-face {
+  font-family: "Ubuntu-R";
+  src: url("/public/assets/fonts/Ubuntu-Regular.ttf");
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.Hidden {
+  display: none;
+}
+
+.Hr-line {
+  border: 1px solid hsl(229, 24%, 87%);
+}
+
+.Page, .Page .Container .Right-Hand .Slide-Box .Slide-Two .ToogleBtn-Box, .Step-Indigator-Box .Icon {
+  display: grid;
+  place-items: center;
+}
+
+.Page .Container .Right-Hand .Slide-Box .Slide-One h1, .Page .Container .Right-Hand .Slide-Box .Slide-Two h1, .Page .Container .Right-Hand .Slide-Box .Slide-Three h1, .Page .Container .Right-Hand .Slide-Box .Slide-Four h1 {
+  font: 2rem "Ubuntu-B";
+  color: hsl(213, 96%, 18%);
+  margin-bottom: 10px;
+}
+
+.Page .Container .Right-Hand .Slide-Box .Slide-One p, .Page .Container .Right-Hand .Slide-Box .Slide-Two p, .Page .Container .Right-Hand .Slide-Box .Slide-Three > p, .Page .Container .Right-Hand .Slide-Box .Slide-Four > p {
+  font: 1rem "Ubuntu-M";
+  color: hsl(231, 11%, 63%);
+}
+
+.Page .Container .Right-Hand .Slide-Box .Slide-Four .Finishing-Table h1, .Page .Container .Right-Hand .Slide-Box .Slide-Four .Finishing-Table h2, .Page .Container .Right-Hand .Slide-Box .Slide-Four .Total-sum {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Step-Indigator-Box {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+.Step-Indigator-Box .Icon {
+  width: 35px;
+  height: 35px;
+  font: 1rem "Ubuntu-B";
+  border-radius: 50%;
+  color: hsl(217, 100%, 97%);
+  border: 1px solid hsl(217, 100%, 97%);
+}
+.Step-Indigator-Box .Text-Box h4 {
+  font: 1rem "Ubuntu-R";
+  color: hsl(228, 100%, 84%);
+  margin-bottom: 3px;
+}
+.Step-Indigator-Box .Text-Box h2 {
+  font: 1rem "Ubuntu-B";
+  letter-spacing: 1px;
+  color: hsl(0, 0%, 100%);
+}
+
+.Input-Box {
+  margin-bottom: 1.4rem;
+}
+.Input-Box label {
+  font: 1rem "Ubuntu-M";
+  color: hsl(213, 96%, 18%);
+  display: block;
+  margin-bottom: 10px;
+  position: relative;
+}
+.Input-Box label::after {
+  content: "This field is required";
+  position: absolute;
+  right: 0;
+  color: hsl(354, 84%, 57%);
+}
+.Input-Box input {
+  width: 100%;
+  font: 1.1rem "Ubuntu-M";
+  color: hsl(213, 96%, 18%);
+  padding: 1rem;
+  border-radius: 7px;
+  outline: none;
+  border: 1px solid hsl(229, 24%, 87%);
+}
+.Input-Box input::placeholder {
+  color: hsl(231, 11%, 63%);
+}
+.Input-Box input:focus {
+  outline: 1px solid hsl(243, 100%, 62%);
+}
+.Input-Box input:hover {
+  cursor: pointer;
+}
+
+.Card {
+  border: 1px solid hsl(229, 24%, 87%);
+  flex-grow: 1;
+  flex-basis: 0;
+  aspect-ratio: 1/1.2;
+  padding: 1rem;
+  border-radius: 7px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 3rem;
+}
+.Card:hover {
+  outline: 1px solid hsl(243, 100%, 62%);
+}
+.Card img {
+  width: 2.5rem;
+}
+.Card h2 {
+  font: 1.1rem "Ubuntu-B";
+  color: hsl(213, 96%, 18%);
+}
+.Card p {
+  font: 1rem "Ubuntu-M";
+  color: hsl(231, 11%, 63%);
+  margin-top: 5px;
+}
+.Card h3 {
+  font: 14px "Ubuntu-M";
+  color: hsl(213, 96%, 18%);
+  margin-top: 5px;
+}
+
+.Tile {
+  border: 1px solid hsl(229, 24%, 87%);
+  outline: 1px solid hsl(243, 100%, 62%);
+  border-radius: 7px;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: min-content 1fr min-content;
+  align-items: center;
+  background: hsl(231, 100%, 99%);
+}
+.Tile .Tick-mark {
+  border-radius: 4px;
+  width: 1.2rem;
+  aspect-ratio: 1/1;
+  background: url("/public/assets/images/icon-checkmark.svg") center/12px no-repeat blue;
+  margin-right: 1rem;
+}
+.Tile .Discription h3 {
+  font: 1.1rem "Ubuntu-B";
+  color: hsl(213, 96%, 18%);
+  margin-bottom: 4px;
+}
+.Tile .Discription p {
+  font: 1rem "Ubuntu-R";
+  color: hsl(231, 11%, 63%);
+}
+.Tile .Rate {
+  font: 1rem "Ubuntu-R";
+  color: hsl(243, 100%, 62%);
+}
+
+.Page {
+  min-height: 100vh;
+  background: hsl(229, 24%, 87%);
+  padding: 0 2rem;
+}
+.Page .Container {
+  width: 100%;
+  max-width: 1000px;
+  aspect-ratio: 3/2;
+  padding: 1rem;
+  border-radius: 15px;
+  background: hsl(0, 0%, 100%);
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: 1fr 2fr;
+}
+.Page .Container .Left-Hand {
+  padding: 2rem;
+  border-radius: 10px;
+  background: url("/public/assets/images/bg-sidebar-desktop.svg") center/cover no-repeat;
+}
+.Page .Container .Right-Hand {
+  display: grid;
+  grid-template-rows: 1fr 4rem;
+  padding: 3rem 0 1rem 0;
+  width: 100%;
+  max-width: 453px;
+  margin: 0 auto;
+}
+.Page .Container .Right-Hand .Slide-Box .Slide-One form {
+  padding: 2rem 0;
+}
+.Page .Container .Right-Hand .Slide-Box .Slide-Two .Card-Box {
+  margin-top: 3rem;
+  display: flex;
+  gap: 1rem;
+}
+.Page .Container .Right-Hand .Slide-Box .Slide-Two .ToogleBtn-Box {
+  margin-top: 2.5rem;
+  width: 100%;
+  padding: 1rem;
+  background: hsl(231, 100%, 99%);
+  border-radius: 5px;
+}
+.Page .Container .Right-Hand .Slide-Box .Slide-Two .ToogleBtn-Box button {
+  width: 2.5rem;
+  aspect-ratio: 3/1;
+  border: none;
+  background: hsl(213, 96%, 18%);
+  padding: 5px;
+  border-radius: 16px;
+  position: relative;
+}
+.Page .Container .Right-Hand .Slide-Box .Slide-Two .ToogleBtn-Box button .Circle {
+  width: 12px;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  background: hsl(0, 0%, 100%);
+}
+.Page .Container .Right-Hand .Slide-Box .Slide-Two .ToogleBtn-Box button::after, .Page .Container .Right-Hand .Slide-Box .Slide-Two .ToogleBtn-Box button::before {
+  font: 1rem "Ubuntu-M";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.Page .Container .Right-Hand .Slide-Box .Slide-Two .ToogleBtn-Box button::before {
+  content: "Monthly";
+  right: calc(100% + 1.5rem);
+  color: hsl(213, 96%, 18%);
+}
+.Page .Container .Right-Hand .Slide-Box .Slide-Two .ToogleBtn-Box button::after {
+  content: "Yearly";
+  left: calc(100% + 1.5rem);
+  color: hsl(231, 11%, 63%);
+}
+.Page .Container .Right-Hand .Slide-Box .Slide-Three .Add-On-Tile-Box {
+  margin-top: 3rem;
+}
+.Page .Container .Right-Hand .Slide-Box .Slide-Four .Finishing-Table {
+  width: 100%;
+  border-radius: 10px;
+  background-color: hsl(231, 100%, 99%);
+  padding: 1.5rem;
+  margin: 3rem 0;
+}
+.Page .Container .Right-Hand .Slide-Box .Slide-Four .Finishing-Table h1 {
+  font: 1rem "Ubuntu-B";
+  color: hsl(213, 96%, 18%);
+  margin-bottom: 1.5rem;
+}
+.Page .Container .Right-Hand .Slide-Box .Slide-Four .Finishing-Table h2 {
+  font: 15px "Ubuntu-M";
+  color: hsl(231, 11%, 63%);
+}
+.Page .Container .Right-Hand .Slide-Box .Slide-Four .Finishing-Table h2:not(:nth-of-type(2)) {
+  margin: 1rem 0;
+}
+.Page .Container .Right-Hand .Slide-Box .Slide-Four .Total-sum {
+  padding: 0 1.5rem;
+  font: 15px "Ubuntu-M";
+  color: hsl(231, 11%, 63%);
+}
+.Page .Container .Right-Hand .Slide-Box .Slide-Four .Total-sum :nth-child(2) {
+  color: hsl(243, 100%, 62%);
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+.Page .Container .Right-Hand .Button-Box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.Page .Container .Right-Hand .Button-Box :first-child {
+  font: 1rem "Ubuntu-M";
+  color: hsl(231, 11%, 63%);
+  border: none;
+  background: transparent;
+}
+.Page .Container .Right-Hand .Button-Box :first-child:hover {
+  color: hsl(213, 96%, 18%);
+  cursor: pointer;
+}
+.Page .Container .Right-Hand .Button-Box :last-child {
+  font: 1rem "Ubuntu-M";
+  border: none;
+  color: hsl(0, 0%, 100%);
+  background: hsl(213, 96%, 18%);
+  border-radius: 7px;
+  padding: 1rem 2rem;
+}
+.Page .Container .Right-Hand .Button-Box :last-child:hover {
+  background: #1b3e6b;
+  cursor: pointer;
+}

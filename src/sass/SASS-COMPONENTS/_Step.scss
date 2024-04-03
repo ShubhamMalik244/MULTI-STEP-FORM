@@ -1,0 +1,37 @@
+@use '../SASS-TOOLKIT/all' as *;
+@use '../classesANDxtends' as *;
+
+.Step-Indigator-Box{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    margin-bottom: 1.5rem;
+
+    .Icon{
+        width: 35px;
+        height: 35px;
+        @include fonting(1rem, 'Ubuntu-B');
+        border-radius: 50%;
+        @extend %center-item;
+        color: $Magnolia;
+        border: 1px solid $Magnolia;
+
+        // color: $Marine-blue;
+        // background: $Light-blue;
+        
+    }
+
+    .Text-Box{
+        h4{
+            @include fonting(1rem, 'Ubuntu-R');
+            color: $Pastel-blue;
+            margin-bottom: 3px;
+        }
+
+        h2{
+            @include fonting(1rem, 'Ubuntu-B');
+            letter-spacing: 1px;
+            color: $White;
+        }
+    }
+}
