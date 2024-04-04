@@ -17,7 +17,7 @@
 }
 
 .Hidden {
-  display: none;
+  display: none !important;
 }
 
 .Hr-line {
@@ -29,7 +29,7 @@
   place-items: center;
 }
 
-.Page .Container .Right-Hand .Slide-Box .Slide-One h1, .Page .Container .Right-Hand .Slide-Box .Slide-Two h1, .Page .Container .Right-Hand .Slide-Box .Slide-Three h1, .Page .Container .Right-Hand .Slide-Box .Slide-Four h1 {
+.Page .Container .Right-Hand .Slide-Box .Slide-One h1, .Page .Container .Right-Hand .Slide-Box .Slide-Two h1, .Page .Container .Right-Hand .Slide-Box .Slide-Three h1, .Page .Container .Right-Hand .Slide-Box .Slide-Four h1, .Page .Container .Right-Hand .Slide-Box .Slide-Five h1 {
   font: 2rem "Ubuntu-B";
   color: hsl(213, 96%, 18%);
   margin-bottom: 10px;
@@ -278,6 +278,28 @@
   color: hsl(243, 100%, 62%);
   font-size: 1.2rem;
   font-weight: bold;
+}
+.Page .Container .Right-Hand .Slide-Box .Slide-Five {
+  margin-top: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.Page .Container .Right-Hand .Slide-Box .Slide-Five .Thankyou-Logo {
+  width: 5rem;
+  aspect-ratio: 1/1;
+  background: url("/public/assets/images/icon-thank-you.svg") center/contain no-repeat;
+}
+.Page .Container .Right-Hand .Slide-Box .Slide-Five h1 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+.Page .Container .Right-Hand .Slide-Box .Slide-Five p {
+  font: 1rem "Ubuntu-R";
+  color: hsl(231, 11%, 63%);
+  text-align: center;
+  line-height: 1.5rem;
 }
 .Page .Container .Right-Hand .Button-Box {
   display: flex;

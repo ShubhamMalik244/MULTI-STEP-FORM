@@ -181,6 +181,33 @@
             }
           }
         }
+
+        .Slide-Five{
+          margin-top: 30%;
+           display: flex;
+           flex-direction: column;
+           align-items: center;
+           justify-content: center;
+
+          .Thankyou-Logo{
+            width: 5rem;
+            aspect-ratio: 1/1;
+            background: url('/public/assets/images/icon-thank-you.svg') center/contain no-repeat;
+          }
+
+          h1{
+            @extend %slide-heading;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+          }
+
+          p{
+            @include fonting(1rem, 'Ubuntu-R');
+            color: $Cool-gray;
+            text-align: center;
+            line-height: 1.5rem;
+          }
+        }
       }
 
       .Button-Box {

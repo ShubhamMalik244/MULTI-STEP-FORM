@@ -72,7 +72,7 @@ function App() {
               </div>
             </section>
 
-            <section className="Slide-Four">
+            <section className="Slide-Four Hidden">
               <h1>Finishing up</h1>
               <p>Double-check everything looks OK before confirming.</p>
 
@@ -100,9 +100,19 @@ function App() {
                 <span>$120/yr</span>
               </div>
             </section>
+
+            <section className="Slide-Five">
+              <div className="Thankyou-Logo"></div>
+              <h1>Thank you!</h1>
+              <p>
+                Thanks for confirming your subscription! We hope you have fun
+                using our platform. If you ever need support, please feel free
+                to email us at support@loremgaming.com.
+              </p>
+            </section>
           </div>
 
-          <div className="Button-Box">
+          <div className="Button-Box Hidden">
             <button type="button">Go Back</button>
             <button type="button">Next Step</button>
           </div>
@@ -113,22 +123,3 @@ function App() {
 }
 
 export default App;
-
-//   Dynamically add subscription and add-on selections here
-
-//   Total (per month/year)
-
-//   Go Back
-//   Confirm
-
-//   Step 4 end
-
-//   Step 5 start
-
-//   Thank you!
-
-//   Thanks for confirming your subscription! We hope you have fun
-//   using our platform. If you ever need support, please feel free
-//   to email us at support@loremgaming.com.
-
-//   Step 5 end
