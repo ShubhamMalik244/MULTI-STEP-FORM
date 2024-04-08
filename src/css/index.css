@@ -30,13 +30,13 @@
 }
 
 .Page .Container .Right-Hand .Slide-Box .Slide-One h1, .Page .Container .Right-Hand .Slide-Box .Slide-Two h1, .Page .Container .Right-Hand .Slide-Box .Slide-Three h1, .Page .Container .Right-Hand .Slide-Box .Slide-Four h1, .Page .Container .Right-Hand .Slide-Box .Slide-Five h1 {
-  font: 2rem "Ubuntu-B";
+  font: clamp(2rem - 4px, 4vw, 2rem) "Ubuntu-B";
   color: hsl(213, 96%, 18%);
   margin-bottom: 10px;
 }
 
 .Page .Container .Right-Hand .Slide-Box .Slide-One p, .Page .Container .Right-Hand .Slide-Box .Slide-Two p, .Page .Container .Right-Hand .Slide-Box .Slide-Three > p, .Page .Container .Right-Hand .Slide-Box .Slide-Four > p {
-  font: 1rem "Ubuntu-M";
+  font: clamp(14px, 1.7vw, 18px) "Ubuntu-R";
   color: hsl(231, 11%, 63%);
 }
 
@@ -53,20 +53,20 @@
   margin-bottom: 1.5rem;
 }
 .Step-Indigator-Box .Icon {
-  width: 35px;
-  height: 35px;
-  font: 1rem "Ubuntu-B";
+  width: clamp(28px, 4vw, 35px);
+  aspect-ratio: 1/1;
+  font: clamp(1rem - 4px, 1.7vw, 1rem) "Ubuntu-B";
   border-radius: 50%;
   color: hsl(217, 100%, 97%);
   border: 1px solid hsl(217, 100%, 97%);
 }
 .Step-Indigator-Box .Text-Box h4 {
-  font: 1rem "Ubuntu-R";
+  font: clamp(1rem - 4px, 1.7vw, 1rem) "Ubuntu-R";
   color: hsl(228, 100%, 84%);
   margin-bottom: 3px;
 }
 .Step-Indigator-Box .Text-Box h2 {
-  font: 1rem "Ubuntu-B";
+  font: clamp(13px, 1.7vw, 17px) "Ubuntu-M";
   letter-spacing: 1px;
   color: hsl(0, 0%, 100%);
 }
@@ -75,7 +75,7 @@
   margin-bottom: 1.4rem;
 }
 .Input-Box label {
-  font: 1rem "Ubuntu-M";
+  font: clamp(1rem - 4px, 1.7vw, 1rem) "Ubuntu-M";
   color: hsl(213, 96%, 18%);
   display: block;
   margin-bottom: 10px;
@@ -89,7 +89,7 @@
 }
 .Input-Box input {
   width: 100%;
-  font: 1.1rem "Ubuntu-M";
+  font: clamp(14px, 1.7vw, 18px) "Ubuntu-M";
   color: hsl(213, 96%, 18%);
   padding: 1rem;
   border-radius: 7px;
@@ -174,7 +174,7 @@
 .Page {
   min-height: 100vh;
   background: hsl(229, 24%, 87%);
-  padding: 0 2rem;
+  padding: 0 1rem;
 }
 .Page .Container {
   width: 100%;
@@ -189,7 +189,7 @@
   grid-template-columns: 1fr 2fr;
 }
 .Page .Container .Left-Hand {
-  padding: 2rem;
+  padding: clamp(1rem, 10%, 2rem);
   border-radius: 10px;
   background: url("/public/assets/images/bg-sidebar-desktop.svg") center/cover no-repeat;
 }
@@ -306,10 +306,12 @@
   justify-content: space-between;
   align-items: center;
 }
-.Page .Container .Right-Hand .Button-Box :first-child {
-  font: 1rem "Ubuntu-M";
-  color: hsl(231, 11%, 63%);
+.Page .Container .Right-Hand .Button-Box :first-child, .Page .Container .Right-Hand .Button-Box :last-child {
+  font: clamp(1rem - 4px, 1.7vw, 1rem) "Ubuntu-M";
   border: none;
+}
+.Page .Container .Right-Hand .Button-Box :first-child {
+  color: hsl(231, 11%, 63%);
   background: transparent;
 }
 .Page .Container .Right-Hand .Button-Box :first-child:hover {
@@ -317,8 +319,6 @@
   cursor: pointer;
 }
 .Page .Container .Right-Hand .Button-Box :last-child {
-  font: 1rem "Ubuntu-M";
-  border: none;
   color: hsl(0, 0%, 100%);
   background: hsl(213, 96%, 18%);
   border-radius: 7px;

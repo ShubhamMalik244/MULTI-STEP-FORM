@@ -8,9 +8,9 @@
     margin-bottom: 1.5rem;
 
     .Icon{
-        width: 35px;
-        height: 35px;
-        @include fonting(1rem, 'Ubuntu-B');
+        width: clamp(28px, 4vw, 35px);
+        aspect-ratio: 1/1;
+        @include fonting($sm-res, 'Ubuntu-B');
         border-radius: 50%;
         @extend %center-item;
         color: $Magnolia;
@@ -22,14 +22,15 @@
     }
 
     .Text-Box{
+
         h4{
-            @include fonting(1rem, 'Ubuntu-R');
+            @include fonting($sm-res, 'Ubuntu-R');
             color: $Pastel-blue;
             margin-bottom: 3px;
         }
 
         h2{
-            @include fonting(1rem, 'Ubuntu-B');
+            @include fonting($ms-res, 'Ubuntu-M');
             letter-spacing: 1px;
             color: $White;
         }

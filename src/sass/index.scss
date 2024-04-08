@@ -14,7 +14,7 @@
   @extend %center-item;
   min-height: 100vh;
   background: $Light-gray;
-  padding: 0 2rem;
+  padding: 0 1rem;
 
   .Container {
     width: 100%;
@@ -29,7 +29,7 @@
     grid-template-columns: 1fr 2fr;
 
     .Left-Hand {
-      padding: 2rem;
+      padding: clamp(1rem, 10%, 2rem);
       border-radius: 10px;
       background: url("/public/assets/images/bg-sidebar-desktop.svg")
         center/cover no-repeat;
@@ -129,12 +129,12 @@
             @extend %slide-para;
           }
 
-          .Add-On-Tile-Box{
+          .Add-On-Tile-Box {
             margin-top: 3rem;
           }
         }
 
-        .Slide-Four{
+        .Slide-Four {
           h1 {
             @extend %slide-heading;
           }
@@ -143,38 +143,38 @@
             @extend %slide-para;
           }
 
-          .Finishing-Table{
+          .Finishing-Table {
             width: 100%;
             border-radius: 10px;
             background-color: $Alabaster;
             padding: 1.5rem;
             margin: 3rem 0;
 
-            h1{
-              @include fonting(1rem, 'Ubuntu-B');
+            h1 {
+              @include fonting(1rem, "Ubuntu-B");
               color: $Marine-blue;
               @extend %gap-bw;
               margin-bottom: 1.5rem;
             }
 
-            h2{
-              @include fonting(15px, 'Ubuntu-M');
+            h2 {
+              @include fonting(15px, "Ubuntu-M");
               color: $Cool-gray;
               @extend %gap-bw;
 
-              &:not(:nth-of-type(2)){
+              &:not(:nth-of-type(2)) {
                 margin: 1rem 0;
               }
             }
           }
 
-          .Total-sum{
+          .Total-sum {
             padding: 0 1.5rem;
             @extend %gap-bw;
-            @include fonting(15px, 'Ubuntu-M');
+            @include fonting(15px, "Ubuntu-M");
             color: $Cool-gray;
 
-            & :nth-child(2){
+            & :nth-child(2) {
               color: $Purplish-blue;
               font-size: 1.2rem;
               font-weight: bold;
@@ -182,27 +182,28 @@
           }
         }
 
-        .Slide-Five{
+        .Slide-Five {
           margin-top: 30%;
-           display: flex;
-           flex-direction: column;
-           align-items: center;
-           justify-content: center;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
 
-          .Thankyou-Logo{
+          .Thankyou-Logo {
             width: 5rem;
             aspect-ratio: 1/1;
-            background: url('/public/assets/images/icon-thank-you.svg') center/contain no-repeat;
+            background: url("/public/assets/images/icon-thank-you.svg")
+              center/contain no-repeat;
           }
 
-          h1{
+          h1 {
             @extend %slide-heading;
             margin-top: 2rem;
             margin-bottom: 1rem;
           }
 
-          p{
-            @include fonting(1rem, 'Ubuntu-R');
+          p {
+            @include fonting(1rem, "Ubuntu-R");
             color: $Cool-gray;
             text-align: center;
             line-height: 1.5rem;
@@ -215,10 +216,15 @@
         justify-content: space-between;
         align-items: center;
 
-        & :first-child {
-          @include fonting(1rem, "Ubuntu-M");
-          color: $Cool-gray;
+        & :first-child,
+        & :last-child {
+          @include fonting($sm-res, "Ubuntu-M");
           border: none;
+        }
+
+        & :first-child {
+          color: $Cool-gray;
+
           background: transparent;
 
           &:hover {
@@ -228,8 +234,6 @@
         }
 
         & :last-child {
-          @include fonting(1rem, "Ubuntu-M");
-          border: none;
           color: $White;
           background: $Marine-blue;
           border-radius: 7px;

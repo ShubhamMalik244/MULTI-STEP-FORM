@@ -16,7 +16,7 @@ function App() {
 
         <section className="Right-Hand">
           <div className="Slide-Box">
-            <section className="Slide-One Hidden">
+            <section className="Slide-One ">
               <h1>Personal info</h1>
               <p>Please provide your name, email address, and phone number.</p>
               <form>
@@ -101,7 +101,7 @@ function App() {
               </div>
             </section>
 
-            <section className="Slide-Five">
+            <section className="Slide-Five Hidden">
               <div className="Thankyou-Logo"></div>
               <h1>Thank you!</h1>
               <p>
@@ -112,7 +112,7 @@ function App() {
             </section>
           </div>
 
-          <div className="Button-Box Hidden">
+          <div className="Button-Box ">
             <button type="button">Go Back</button>
             <button type="button">Next Step</button>
           </div>

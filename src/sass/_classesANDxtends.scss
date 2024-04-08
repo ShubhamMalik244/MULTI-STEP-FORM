@@ -16,13 +16,13 @@
 }
 
 %slide-heading {
-  @include fonting(2rem, "Ubuntu-B");
+  @include fonting($l-res, "Ubuntu-B");
   color: $Marine-blue;
   margin-bottom: 10px;
 }
 
 %slide-para {
-  @include fonting(1rem, "Ubuntu-M");
+  @include fonting($m-res, "Ubuntu-R");
   color: $Cool-gray;
 }
 

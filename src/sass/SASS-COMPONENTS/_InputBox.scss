@@ -5,7 +5,7 @@
     margin-bottom: 1.4rem;
     
     label{
-        @include fonting(1rem, 'Ubuntu-M');
+        @include fonting($sm-res, 'Ubuntu-M');
         color: $Marine-blue;
         display: block;
         margin-bottom: 10px;
@@ -21,7 +21,7 @@
 
     input{
         width: 100%;
-        @include fonting(1.1rem, 'Ubuntu-M');
+        @include fonting($m-res, 'Ubuntu-M');
         color: $Marine-blue;
         padding: 1rem;
         border-radius: 7px;
