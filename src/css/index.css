@@ -29,13 +29,13 @@
   place-items: center;
 }
 
-.Page .Container .Right-Hand .Slide-Box .Slide-One h1, .Page .Container .Right-Hand .Slide-Box .Slide-Two h1, .Page .Container .Right-Hand .Slide-Box .Slide-Three h1, .Page .Container .Right-Hand .Slide-Box .Slide-Four h1, .Page .Container .Right-Hand .Slide-Box .Slide-Five h1 {
-  font: clamp(2rem - 4px, 4vw, 2rem) "Ubuntu-B";
+.Page .Container .Right-Hand .Slide-Box .Slide-One > h1, .Page .Container .Right-Hand .Slide-Box .Slide-Two > h1, .Page .Container .Right-Hand .Slide-Box .Slide-Three > h1, .Page .Container .Right-Hand .Slide-Box .Slide-Four > h1, .Page .Container .Right-Hand .Slide-Box .Slide-Five h1 {
+  font: clamp(28px, 4vw, 2rem) "Ubuntu-B";
   color: hsl(213, 96%, 18%);
   margin-bottom: 10px;
 }
 
-.Page .Container .Right-Hand .Slide-Box .Slide-One p, .Page .Container .Right-Hand .Slide-Box .Slide-Two p, .Page .Container .Right-Hand .Slide-Box .Slide-Three > p, .Page .Container .Right-Hand .Slide-Box .Slide-Four > p {
+.Page .Container .Right-Hand .Slide-Box .Slide-One > p, .Page .Container .Right-Hand .Slide-Box .Slide-Two > p, .Page .Container .Right-Hand .Slide-Box .Slide-Three > p, .Page .Container .Right-Hand .Slide-Box .Slide-Four > p {
   font: clamp(14px, 1.7vw, 18px) "Ubuntu-R";
   color: hsl(231, 11%, 63%);
 }
@@ -55,13 +55,13 @@
 .Step-Indigator-Box .Icon {
   width: clamp(28px, 4vw, 35px);
   aspect-ratio: 1/1;
-  font: clamp(1rem - 4px, 1.7vw, 1rem) "Ubuntu-B";
+  font: clamp(12px, 1.7vw, 1rem) "Ubuntu-B";
   border-radius: 50%;
   color: hsl(217, 100%, 97%);
   border: 1px solid hsl(217, 100%, 97%);
 }
 .Step-Indigator-Box .Text-Box h4 {
-  font: clamp(1rem - 4px, 1.7vw, 1rem) "Ubuntu-R";
+  font: clamp(12px, 1.7vw, 1rem) "Ubuntu-R";
   color: hsl(228, 100%, 84%);
   margin-bottom: 3px;
 }
@@ -75,7 +75,7 @@
   margin-bottom: 1.4rem;
 }
 .Input-Box label {
-  font: clamp(1rem - 4px, 1.7vw, 1rem) "Ubuntu-M";
+  font: clamp(12px, 1.7vw, 1rem) "Ubuntu-M";
   color: hsl(213, 96%, 18%);
   display: block;
   margin-bottom: 10px;
@@ -110,31 +110,29 @@
   border: 1px solid hsl(229, 24%, 87%);
   flex-grow: 1;
   flex-basis: 0;
-  aspect-ratio: 1/1.2;
   padding: 1rem;
   border-radius: 7px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  gap: 3rem;
+  gap: clamp(1rem, 5vw, 3rem);
 }
 .Card:hover {
   outline: 1px solid hsl(243, 100%, 62%);
 }
 .Card img {
-  width: 2.5rem;
+  width: clamp(2rem, 5vw, 2.5rem);
 }
 .Card h2 {
-  font: 1.1rem "Ubuntu-B";
+  font: clamp(13px, 1.7vw, 17px) "Ubuntu-B";
   color: hsl(213, 96%, 18%);
 }
 .Card p {
-  font: 1rem "Ubuntu-M";
+  font: clamp(12px, 1.7vw, 1rem) "Ubuntu-R";
   color: hsl(231, 11%, 63%);
   margin-top: 5px;
 }
 .Card h3 {
-  font: 14px "Ubuntu-M";
+  font: clamp(10.5px, 1.5vw, 14px) "Ubuntu-M";
   color: hsl(213, 96%, 18%);
   margin-top: 5px;
 }
@@ -196,7 +194,7 @@
 .Page .Container .Right-Hand {
   display: grid;
   grid-template-rows: 1fr 4rem;
-  padding: 3rem 0 1rem 0;
+  padding: clamp(0px, 15% - 48px, 3rem) 0 clamp(1px, 4% - 9px, 1rem) 0;
   width: 100%;
   max-width: 453px;
   margin: 0 auto;
@@ -232,7 +230,7 @@
   background: hsl(0, 0%, 100%);
 }
 .Page .Container .Right-Hand .Slide-Box .Slide-Two .ToogleBtn-Box button::after, .Page .Container .Right-Hand .Slide-Box .Slide-Two .ToogleBtn-Box button::before {
-  font: 1rem "Ubuntu-M";
+  font: clamp(12px, 1.7vw, 1rem) "Ubuntu-M";
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -305,9 +303,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-top: 1rem;
 }
 .Page .Container .Right-Hand .Button-Box :first-child, .Page .Container .Right-Hand .Button-Box :last-child {
-  font: clamp(1rem - 4px, 1.7vw, 1rem) "Ubuntu-M";
+  font: clamp(12px, 1.7vw, 1rem) "Ubuntu-M";
   border: none;
 }
 .Page .Container .Right-Hand .Button-Box :first-child {

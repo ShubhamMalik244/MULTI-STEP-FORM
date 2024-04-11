@@ -17,8 +17,8 @@ $Alabaster: hsl(231, 100%, 99%);
 $White: hsl(0, 0%, 100%);
 
 //RESPONSIVE FONTS
-
-$sm-res: clamp(calc(1rem - 4px), 1.7vw, 1rem);
-$ms-res: clamp(calc(17px - 4px), 1.7vw, 17px);
-$m-res: clamp(calc(18px - 4px), 1.7vw, 18px);
-$l-res: clamp(calc(2rem - 4px), 4vw, 2rem);
+$xs-res: clamp(10.5px, 1.5vw, 14px);
+$sm-res: clamp(12px, 1.7vw, 1rem);
+$ms-res: clamp(13px, 1.7vw, 17px);
+$m-res: clamp(14px, 1.7vw, 18px);
+$l-res: clamp(28px, 4vw, 2rem);

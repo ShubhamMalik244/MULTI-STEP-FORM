@@ -16,7 +16,7 @@ function App() {
 
         <section className="Right-Hand">
           <div className="Slide-Box">
-            <section className="Slide-One ">
+            <section className="Slide-One Hidden">
               <h1>Personal info</h1>
               <p>Please provide your name, email address, and phone number.</p>
               <form>
@@ -32,7 +32,7 @@ function App() {
               </form>
             </section>
 
-            <section className="Slide-Two Hidden">
+            <section className="Slide-Two ">
               <h1>Select your plan</h1>
               <p>You have the option of monthly or yearly billing.</p>
 

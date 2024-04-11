@@ -5,13 +5,11 @@
     border: 1px solid $Light-gray;
     flex-grow: 1;
     flex-basis: 0;
-    aspect-ratio: 1 / 1.2;
     padding: 1rem;
     border-radius: 7px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    gap: 3rem;
+    gap: clamp(1rem, 5vw, 3rem);
 
     &:hover{
         outline: 1px solid $Purplish-blue;
@@ -20,22 +18,22 @@
     
 
     img{
-        width: 2.5rem;
+        width: clamp(2rem, 5vw, 2.5rem);
     }
 
     h2{
-        @include fonting(1.1rem, 'Ubuntu-B');
+        @include fonting($ms-res, 'Ubuntu-B');
         color: $Marine-blue;
     }
 
     p{
-        @include fonting(1rem, 'Ubuntu-M');
+        @include fonting($sm-res, 'Ubuntu-R');
         color: $Cool-gray;
         margin-top: 5px;
     }
 
     h3{
-        @include fonting(14px, 'Ubuntu-M');
+        @include fonting($xs-res, 'Ubuntu-M');
         color: $Marine-blue;
         margin-top: 5px;
     }

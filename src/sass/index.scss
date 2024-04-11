@@ -38,18 +38,18 @@
     .Right-Hand {
       display: grid;
       grid-template-rows: 1fr 4rem;
-      padding: 3rem 0 1rem 0;
+      padding: clamp(0px, calc(15% - 48px), 3rem) 0 clamp(1px, calc(4% - 9px), 1rem) 0;
       width: 100%;
       max-width: 453px;
       margin: 0 auto;
 
       .Slide-Box {
         .Slide-One {
-          h1 {
+          & > h1 {
             @extend %slide-heading;
           }
 
-          p {
+          & > p {
             @extend %slide-para;
           }
 
@@ -59,11 +59,11 @@
         }
 
         .Slide-Two {
-          h1 {
+          & > h1 {
             @extend %slide-heading;
           }
 
-          p {
+          & > p {
             @extend %slide-para;
           }
 
@@ -99,7 +99,7 @@
 
               &::after,
               &::before {
-                @include fonting(1rem, "Ubuntu-M");
+                @include fonting($sm-res, "Ubuntu-M");
                 position: absolute;
                 top: 50%;
                 transform: translateY(-50%);
@@ -121,7 +121,7 @@
         }
 
         .Slide-Three {
-          h1 {
+          & > h1 {
             @extend %slide-heading;
           }
 
@@ -135,7 +135,7 @@
         }
 
         .Slide-Four {
-          h1 {
+          & > h1 {
             @extend %slide-heading;
           }
 
@@ -215,6 +215,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        margin-top: 1rem;
 
         & :first-child,
         & :last-child {
