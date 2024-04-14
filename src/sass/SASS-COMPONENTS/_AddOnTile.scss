@@ -6,7 +6,7 @@
   outline: 1px solid $Purplish-blue;
   border-radius: 7px;
   margin-bottom: 1rem;
-  padding: 1rem;
+  padding: clamp(10px, calc(8% - 23px), 1rem);
   display: grid;
   grid-template-columns: min-content 1fr min-content;
   align-items: center;
@@ -14,7 +14,7 @@
 
   .Tick-mark {
     border-radius: 4px;
-    width: 1.2rem;
+    width: clamp(1rem, calc(10vw - 54px), 1.2rem);
     aspect-ratio: 1/1;
     background: url("/public/assets/images/icon-checkmark.svg") center/12px
       no-repeat blue;
@@ -24,19 +24,19 @@
 
   .Discription {
     h3 {
-      @include fonting(1.1rem, "Ubuntu-B");
+      @include fonting($m-res, "Ubuntu-B");
       color: $Marine-blue;
       margin-bottom: 4px;
     }
 
     p {
-      @include fonting(1rem, "Ubuntu-R");
+      @include fonting($ms-res, "Ubuntu-R");
       color: $Cool-gray;
     }
   }
 
   .Rate {
-    @include fonting(1rem, "Ubuntu-R");
+    @include fonting($ms-res, "Ubuntu-R");
     color: $Purplish-blue;
   }
 }

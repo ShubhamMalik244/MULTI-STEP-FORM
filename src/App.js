@@ -2,6 +2,7 @@ import Step from "./JS-COMPONENTS/Step";
 import InputBox from "./JS-COMPONENTS/InputBox";
 import Card from "./JS-COMPONENTS/Card";
 import AddOnTile from "./JS-COMPONENTS/AddOnTile";
+import Header from "./JS-COMPONENTS/Header";
 
 function App() {
   return (
@@ -15,10 +16,13 @@ function App() {
         </section>
 
         <section className="Right-Hand">
-          <div className="Slide-Box">
+          <Header
+            hText={"Personal info"}
+            pText={"Please provide your name, email address, and phone number."}
+          ></Header>
+
+          <div className="Slide-Box ">
             <section className="Slide-One Hidden">
-              <h1>Personal info</h1>
-              <p>Please provide your name, email address, and phone number.</p>
               <form>
                 <InputBox label="Name" placeholder="e.g. Stephen King" />
                 <InputBox
@@ -32,9 +36,8 @@ function App() {
               </form>
             </section>
 
-            <section className="Slide-Two ">
-              <h1>Select your plan</h1>
-              <p>You have the option of monthly or yearly billing.</p>
+            <section className="Slide-Two Hidden">
+             
 
               <div className="Card-Box">
                 <Card icon={"arcade"} mode={"Arcade"} price={"$9/mo"} />
@@ -49,9 +52,8 @@ function App() {
               </div>
             </section>
 
-            <section className="Slide-Three Hidden">
-              <h1>Pick add-ons</h1>
-              <p>Add-ons help enhance your gaming experience.</p>
+            <section className="Slide-Three ">
+              
 
               <div className="Add-On-Tile-Box">
                 <AddOnTile
@@ -73,8 +75,7 @@ function App() {
             </section>
 
             <section className="Slide-Four Hidden">
-              <h1>Finishing up</h1>
-              <p>Double-check everything looks OK before confirming.</p>
+              
 
               <div className="Finishing-Table">
                 <h1>
@@ -100,8 +101,14 @@ function App() {
                 <span>$120/yr</span>
               </div>
             </section>
+          </div>
 
-            <section className="Slide-Five Hidden">
+          <div className="Footer">
+            <button type="button">Go Back</button>
+            <button type="button">Next Step</button>
+          </div>
+
+          <section className="Thankyou-Page Hidden">
               <div className="Thankyou-Logo"></div>
               <h1>Thank you!</h1>
               <p>
@@ -110,12 +117,6 @@ function App() {
                 to email us at support@loremgaming.com.
               </p>
             </section>
-          </div>
-
-          <div className="Button-Box ">
-            <button type="button">Go Back</button>
-            <button type="button">Next Step</button>
-          </div>
         </section>
       </div>
     </div>

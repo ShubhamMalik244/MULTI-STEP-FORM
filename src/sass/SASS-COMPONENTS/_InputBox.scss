@@ -23,7 +23,7 @@
         width: 100%;
         @include fonting($m-res, 'Ubuntu-M');
         color: $Marine-blue;
-        padding: 1rem;
+        padding: clamp(10px, calc(8% - 23px), 1rem);
         border-radius: 7px;
         outline: none;
         border: 1px solid $Light-gray;
