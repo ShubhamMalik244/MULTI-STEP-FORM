@@ -1,0 +1,25 @@
+@font-face {
+  font-family: "Ubuntu-B";
+  src: url("/public/assets/fonts/Ubuntu-Bold.ttf");
+}
+@font-face {
+  font-family: "Ubuntu-M";
+  src: url("/public/assets/fonts/Ubuntu-Medium.ttf");
+}
+@font-face {
+  font-family: "Ubuntu-R";
+  src: url("/public/assets/fonts/Ubuntu-Regular.ttf");
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.Hidden {
+  display: none !important;
+}
+
+.Hr-line {
+  border: 1px solid hsl(229, 24%, 87%);
+}

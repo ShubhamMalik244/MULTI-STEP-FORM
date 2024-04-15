@@ -18,3 +18,10 @@
 @mixin fonting($size, $family) {
     font: $size $family;
 }
+
+//MEDIA QUERY
+@mixin Mobile{
+  @media  screen and (max-width: 700px) {
+    @content
+  }
+}
