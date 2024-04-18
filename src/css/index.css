@@ -17,13 +17,12 @@
   --m-res: clamp(14px, 1.7vw, 18px);
   --l-res: clamp(28px, 4vw, 2rem);
   --p-Left-Hand: clamp(1rem, 10%, 2rem);
-  --p-Right-Hand: clamp(0px, calc(15% - 48px), 3rem) 0
-    clamp(1px, calc(4% - 9px), 1rem);
   --p-Tile: clamp(10px, calc(8% - 23px), 1rem);
   --p-Input: clamp(10px, calc(8% - 23px), 1rem);
   --p-Main: 2rem;
   --p-Container: 1rem;
-  --m-b-Header: clamp(1rem, calc(37% - 137px), 3rem);
+  --m-Header: clamp(1rem, 10vw - 54px, 3rem);
+  --m-b-Footer: clamp(1px, 18% - 74px, 1rem);
   --m-t-Thankyou-h1: clamp(28px, 4vw, 2rem);
   --m-b-Thankyou-h1: clamp(12px, 1.7vw, 1rem);
   --g-Card: clamp(1rem, 5vw, 3rem);
@@ -37,13 +36,12 @@
     --m-res: clamp(17px, 4.6vw, 18px);
     --l-res: clamp(25px, 6.7vw, 2rem);
     --p-Left-Hand: 2rem;
-    --p-Right-Hand: 3rem 1rem;
     --p-Tile: 1rem;
     --p-Input: 1rem;
     --p-Main: clamp(1.5rem, 6.4vw, 2rem);
     --p-Container: clamp(0px, calc(10vw - 34px), 1rem);
-    --p-Thankyou-Page: 3rem clamp(1.5rem, 6.4vw, 2rem);
     --m-b-Header: 1.5rem;
+    --m-b-Footer: 0;
     --m-t-Thankyou-h1: 2rem;
     --m-b-Thankyou-h1: 1rem;
   }
@@ -67,18 +65,18 @@
   place-items: center;
 }
 
-.Page .Container .Right-Hand main .Header h1, .Page .Container .Thankyou-Page h1 {
+.Page .Container .Right-Hand main .Header h1, .Page .Container .Right-Hand main .Thankyou-Page h1 {
   font: var(--l-res) "Ubuntu-B";
   color: hsl(213, 96%, 18%);
   margin-bottom: 10px;
 }
 
-.Page .Container .Right-Hand main .Header p, .Page .Container .Thankyou-Page p {
+.Page .Container .Right-Hand main .Header p, .Page .Container .Right-Hand main .Thankyou-Page p {
   font: var(--m-res) "Ubuntu-R";
   color: hsl(231, 11%, 63%);
 }
 @media screen and (max-width: 700px) {
-  .Page .Container .Right-Hand main .Header p, .Page .Container .Thankyou-Page p {
+  .Page .Container .Right-Hand main .Header p, .Page .Container .Right-Hand main .Thankyou-Page p {
     line-height: 1.5rem;
   }
 }
@@ -280,7 +278,6 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: var(--p-Right-Hand);
   width: 100%;
   max-width: 500px;
   margin: 0 auto;
@@ -288,9 +285,12 @@
 @media screen and (max-width: 700px) {
   .Page .Container .Right-Hand {
     padding: unset;
-    height: 100vh;
     padding-top: 5rem;
   }
+}
+.Page .Container .Right-Hand main {
+  display: grid;
+  grid-template-rows: auto 1fr;
 }
 @media screen and (max-width: 700px) {
   .Page .Container .Right-Hand main {
@@ -301,7 +301,7 @@
   }
 }
 .Page .Container .Right-Hand main .Header {
-  margin-bottom: var(--m-b-Header);
+  margin: var(--m-Header) 0;
 }
 .Page .Container .Right-Hand main .Slide-Box .Slide-Two .Card-Box {
   display: flex;
@@ -379,11 +379,31 @@
   font-size: var(--m-res);
   font-weight: bold;
 }
+.Page .Container .Right-Hand main .Thankyou-Page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  grid-row: 1/3;
+}
+.Page .Container .Right-Hand main .Thankyou-Page .Thankyou-Logo {
+  width: clamp(3rem, 15% - 14px, 5rem);
+  aspect-ratio: 1/1;
+  background: url("/public/assets/images/icon-thank-you.svg") center/contain no-repeat;
+}
+.Page .Container .Right-Hand main .Thankyou-Page h1 {
+  margin-top: var(--m-t-Thankyou-h1);
+  margin-bottom: var(--m-b-Thankyou-h1);
+}
+.Page .Container .Right-Hand main .Thankyou-Page p {
+  text-align: center;
+  line-height: 1.5rem;
+}
 .Page .Container .Right-Hand .Footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 1rem;
+  margin: 1rem 0 var(--m-b-Footer);
 }
 @media screen and (max-width: 700px) {
   .Page .Container .Right-Hand .Footer {
@@ -419,34 +439,4 @@
 .Page .Container .Right-Hand .Footer :last-child:hover {
   background: #1b3e6b;
   cursor: pointer;
-}
-.Page .Container .Thankyou-Page {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-@media screen and (max-width: 700px) {
-  .Page .Container .Thankyou-Page {
-    padding: var(--p-Thankyou-Page);
-    width: 100%;
-    max-width: 500px;
-    margin: 5rem auto 0;
-    background: hsl(0, 0%, 100%);
-    position: relative;
-    border-radius: 15px;
-  }
-}
-.Page .Container .Thankyou-Page .Thankyou-Logo {
-  width: clamp(3rem, 15% - 14px, 5rem);
-  aspect-ratio: 1/1;
-  background: url("/public/assets/images/icon-thank-you.svg") center/contain no-repeat;
-}
-.Page .Container .Thankyou-Page h1 {
-  margin-top: var(--m-t-Thankyou-h1);
-  margin-bottom: var(--m-b-Thankyou-h1);
-}
-.Page .Container .Thankyou-Page p {
-  text-align: center;
-  line-height: 1.5rem;
 }

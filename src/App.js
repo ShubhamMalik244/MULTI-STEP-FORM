@@ -14,17 +14,17 @@ function App() {
           <Step icon="4" textUp="STEP 4" textDown="SUMMARY" />
         </section>
 
-        <section className="Right-Hand Hidden">
-          <main>
-            <div className="Header">
+        <section className="Right-Hand">
+          <main className=" ">
+            <div className="Header ">
               <h1>{"Personal info"}</h1>
               <p>
                 {"Please provide your name, email address, and phone number."}
               </p>
             </div>
 
-            <div className="Slide-Box">
-              <section className="Hidden">
+            <div className="Slide-Box ">
+              <section className="">
                 <form>
                   <InputBox label="Name" placeholder="e.g. Stephen King" />
                   <InputBox
@@ -52,7 +52,7 @@ function App() {
                 </div>
               </section>
 
-              <section className="">
+              <section className="Hidden">
                 <div className="Add-On-Tile-Box">
                   <AddOnTile
                     heading={"Online service"}
@@ -98,22 +98,22 @@ function App() {
                 </div>
               </section>
             </div>
+
+            <section className="Thankyou-Page Hidden">
+            <div className="Thankyou-Logo"></div>
+            <h1>Thank you!</h1>
+            <p>
+              Thanks for confirming your subscription! We hope you have fun
+              using our platform. If you ever need support, please feel free to
+              email us at support@loremgaming.com.
+            </p>
+          </section>
           </main>
 
           <div className="Footer">
             <button type="button">Go Back</button>
             <button type="button">Next Step</button>
           </div>
-        </section>
-
-        <section className="Thankyou-Page ">
-          <div className="Thankyou-Logo"></div>
-          <h1>Thank you!</h1>
-          <p>
-            Thanks for confirming your subscription! We hope you have fun using
-            our platform. If you ever need support, please feel free to email us
-            at support@loremgaming.com.
-          </p>
         </section>
       </div>
     </div>
