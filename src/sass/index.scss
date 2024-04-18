@@ -16,15 +16,15 @@
   background: $Light-gray;
   padding: 0 1rem;
 
-  @include Mobile{
-    background: red
+  @include Mobile {
+    padding: 0;
   }
 
   .Container {
     width: 100%;
     max-width: 1000px;
     aspect-ratio: 3/2;
-    padding: 1rem;
+    padding: var(--p-Container);
     border-radius: 15px;
     background: $White;
     box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
@@ -32,132 +32,172 @@
     grid-gap: 1rem;
     grid-template-columns: 1fr 2fr;
 
+    @include Mobile {
+      display: block;
+      height: 100vh;
+      aspect-ratio: unset;
+      background: unset;
+    }
+
     .Left-Hand {
-      padding: clamp(1rem, 10%, 2rem);
+      padding: var(--p-Left-Hand);
       border-radius: 10px;
       background: url("/public/assets/images/bg-sidebar-desktop.svg")
         center/cover no-repeat;
+
+      @include Mobile {
+        border-radius: unset;
+        background: url("/public/assets/images/bg-sidebar-mobile.svg")
+          center/cover no-repeat;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 1.2rem;
+        position: absolute;
+        inset: 0 0 auto 0;
+        z-index: 0;
+        height: 10rem;
+      }
 
       //STEP COMPONENT
     }
 
     .Right-Hand {
-      display: grid;
-      grid-template-rows: auto 1fr auto;
-      padding: clamp(0px, calc(15% - 48px), 3rem) 0
-        clamp(1px, calc(4% - 9px), 1rem);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: var(--p-Right-Hand);
       width: 100%;
       max-width: 500px;
       margin: 0 auto;
 
-      .Header {
-        margin-bottom: clamp(1rem, calc(37% - 137px), 3rem);
-
-        h1 {
-          @extend %slide-heading;
-        }
-
-        p {
-          @extend %slide-para;
-        }
+      @include Mobile {
+        padding: unset;
+        height: 100vh;
+        padding-top: 5rem;
       }
 
-      .Slide-Box {
-        //INPUTBOX COMPONENT
+      main {
+        @include Mobile {
+          background: $White;
+          padding: var(--p-Main);
+          border-radius: 10px;
+          z-index: 1;
+        }
 
-        .Slide-Two {
-          .Card-Box {
-            display: flex;
-            gap: 1rem;
+        .Header {
+          margin-bottom: var(--m-b-Header);
 
-            //CARD COMPONENT
+          h1 {
+            @extend %slide-heading;
           }
 
-          .ToogleBtn-Box {
-            margin-top: 2.5rem;
-            @extend %center-item;
-            width: 100%;
-            padding: 1rem;
-            background: $Alabaster;
-            border-radius: 5px;
-
-            button {
-              width: 2.5rem;
-              aspect-ratio: 3/1;
-              border: none;
-              background: $Marine-blue;
-              padding: 5px;
-              border-radius: 16px;
-              position: relative;
-
-              .Circle {
-                width: 12px;
-                aspect-ratio: 1/1;
-                border-radius: 50%;
-                background: $White;
-              }
-
-              &::after,
-              &::before {
-                @include fonting($sm-res, "Ubuntu-M");
-                position: absolute;
-                top: 50%;
-                transform: translateY(-50%);
-              }
-
-              &::before {
-                content: "Monthly";
-                right: calc(100% + 1.5rem);
-                color: $Marine-blue;
-              }
-
-              &::after {
-                content: "Yearly";
-                left: calc(100% + 1.5rem);
-                color: $Cool-gray;
-              }
-            }
+          p {
+            @extend %slide-para;
           }
         }
 
-        //ADDONSLIDE COMPONENT
+        .Slide-Box {
+          //INPUTBOX COMPONENT
 
-        .Slide-Four {
-          .Finishing-Table {
-            width: 100%;
-            border-radius: 10px;
-            background-color: $Alabaster;
-            padding: 1.5rem;
+          .Slide-Two {
+            .Card-Box {
+              display: flex;
+              gap: 1rem;
 
-            h1 {
-              @include fonting($sm-res, "Ubuntu-B");
-              color: $Marine-blue;
-              @extend %gap-bw;
-              margin-bottom: 1.5rem;
+              @include Mobile {
+                flex-direction: column;
+              }
+
+              //CARD COMPONENT
             }
 
-            h2 {
-              @include fonting($xs-res, "Ubuntu-M");
-              color: $Cool-gray;
-              @extend %gap-bw;
+            .ToogleBtn-Box {
+              margin-top: 2.5rem;
+              @extend %center-item;
+              width: 100%;
+              padding: 1rem;
+              background: $Alabaster;
+              border-radius: 5px;
 
-              &:not(:nth-of-type(2)) {
-                margin: 1rem 0;
+              button {
+                width: 2.5rem;
+                aspect-ratio: 3/1;
+                border: none;
+                background: $Marine-blue;
+                padding: 5px;
+                border-radius: 16px;
+                position: relative;
+
+                .Circle {
+                  width: 12px;
+                  aspect-ratio: 1/1;
+                  border-radius: 50%;
+                  background: $White;
+                }
+
+                &::after,
+                &::before {
+                  @include fonting(var(--sm-res), "Ubuntu-M");
+                  position: absolute;
+                  top: 50%;
+                  transform: translateY(-50%);
+                }
+
+                &::before {
+                  content: "Monthly";
+                  right: calc(100% + 1.5rem);
+                  color: $Marine-blue;
+                }
+
+                &::after {
+                  content: "Yearly";
+                  left: calc(100% + 1.5rem);
+                  color: $Cool-gray;
+                }
               }
             }
           }
 
-          .Total-sum {
-            margin-top: 3rem;
-            padding: 0 1.5rem;
-            @extend %gap-bw;
-            @include fonting($xs-res, "Ubuntu-M");
-            color: $Cool-gray;
+          //ADDONSLIDE COMPONENT
 
-            & :nth-child(2) {
-              color: $Purplish-blue;
-              font-size: $m-res;
-              font-weight: bold;
+          .Slide-Four {
+            .Finishing-Table {
+              width: 100%;
+              border-radius: 10px;
+              background-color: $Alabaster;
+              padding: 1.5rem;
+
+              h1 {
+                @include fonting(var(--sm-res), "Ubuntu-B");
+                color: $Marine-blue;
+                @extend %gap-bw;
+                margin-bottom: 1.5rem;
+              }
+
+              h2 {
+                @include fonting(var(--xs-res), "Ubuntu-M");
+                color: $Cool-gray;
+                @extend %gap-bw;
+
+                &:not(:nth-of-type(2)) {
+                  margin: 1rem 0;
+                }
+              }
+            }
+
+            .Total-sum {
+              margin-top: 3rem;
+              padding: 0 1.5rem;
+              @extend %gap-bw;
+              @include fonting(var(--xs-res), "Ubuntu-M");
+              color: $Cool-gray;
+
+              & :nth-child(2) {
+                color: $Purplish-blue;
+                font-size: var(--m-res);
+                font-weight: bold;
+              }
             }
           }
         }
@@ -169,9 +209,16 @@
         align-items: center;
         margin-top: 1rem;
 
+        @include Mobile {
+          background: hsl(0, 0%, 100%);
+          padding: 1rem;
+          position: absolute;
+          inset: auto 0 0 0;
+        }
+
         & :first-child,
         & :last-child {
-          @include fonting($sm-res, "Ubuntu-M");
+          @include fonting(var(--sm-res), "Ubuntu-M");
           border: none;
         }
 
@@ -192,6 +239,10 @@
           border-radius: 7px;
           padding: 1rem 2rem;
 
+          @include Mobile {
+            border-radius: 5px;
+          }
+
           &:hover {
             background: mix($White, $Marine-blue, 10%);
             cursor: pointer;
@@ -206,6 +257,16 @@
       align-items: center;
       justify-content: center;
 
+      @include Mobile {
+        padding: var(--p-Thankyou-Page);
+        width: 100%;
+        max-width: 500px;
+        margin: 5rem auto 0;
+        background: $White;
+        position: relative;
+        border-radius: 15px;
+      }
+
       .Thankyou-Logo {
         width: clamp(3rem, calc(15% - 14px), 5rem);
         aspect-ratio: 1/1;
@@ -215,8 +276,8 @@
 
       h1 {
         @extend %slide-heading;
-        margin-top: $l-res;
-        margin-bottom: $sm-res;
+        margin-top: var(--m-t-Thankyou-h1);
+        margin-bottom: var(--m-b-Thankyou-h1);
       }
 
       p {

@@ -1,43 +1,45 @@
-@use '../SASS-TOOLKIT/all' as *;
-@use '../classesANDxtends' as *;
+@use "../SASS-TOOLKIT/all" as *;
+@use "../classesANDxtends" as *;
 
-.Input-Box{
+.Input-Box {
+  &:not(:last-of-type) {
     margin-bottom: 1.4rem;
-    
-    label{
-        @include fonting($sm-res, 'Ubuntu-M');
-        color: $Marine-blue;
-        display: block;
-        margin-bottom: 10px;
-        position: relative;
+  }
 
-        &::after{
-            content: 'This field is required';
-            position: absolute;
-            right: 0;
-            color: $Strawberry-red;
-        }
+  label {
+    @include fonting(var(--sm-res), "Ubuntu-B");
+    color: $Marine-blue;
+    display: block;
+    margin-bottom: 10px;
+    position: relative;
+
+    &::after {
+      content: "This field is required";
+      position: absolute;
+      right: 0;
+      color: $Strawberry-red;
+    }
+  }
+
+  input {
+    width: 100%;
+    @include fonting(var(--m-res), "Ubuntu-M");
+    color: $Marine-blue;
+    padding: var(--p-Input);
+    border-radius: 7px;
+    outline: none;
+    border: 1px solid $Light-gray;
+
+    &::placeholder {
+      color: $Cool-gray;
     }
 
-    input{
-        width: 100%;
-        @include fonting($m-res, 'Ubuntu-M');
-        color: $Marine-blue;
-        padding: clamp(10px, calc(8% - 23px), 1rem);
-        border-radius: 7px;
-        outline: none;
-        border: 1px solid $Light-gray;
-
-        &::placeholder{
-            color: $Cool-gray;
-        }
-
-        &:focus{
-            outline: 1px solid $Purplish-blue;
-        }
-
-        &:hover{
-            cursor: pointer;
-        }
+    &:focus {
+      outline: 1px solid $Purplish-blue;
     }
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
 }

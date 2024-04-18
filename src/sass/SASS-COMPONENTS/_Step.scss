@@ -10,7 +10,7 @@
     .Icon{
         width: clamp(28px, 4vw, 35px);
         aspect-ratio: 1/1;
-        @include fonting($sm-res, 'Ubuntu-B');
+        @include fonting(var(--sm-res), 'Ubuntu-B');
         border-radius: 50%;
         @extend %center-item;
         color: $Magnolia;
@@ -19,18 +19,24 @@
         // color: $Marine-blue;
         // background: $Light-blue;
         
+        @include Mobile{
+             width: 35px;
+        }
     }
 
     .Text-Box{
+        @include Mobile{
+            display: none
+        }
 
         h4{
-            @include fonting($sm-res, 'Ubuntu-R');
+            @include fonting(var(--sm-res), 'Ubuntu-R');
             color: $Pastel-blue;
             margin-bottom: 3px;
         }
 
         h2{
-            @include fonting($ms-res, 'Ubuntu-M');
+            @include fonting(var(--ms-res), 'Ubuntu-M');
             letter-spacing: 1px;
             color: $White;
         }

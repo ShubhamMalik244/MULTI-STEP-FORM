@@ -1,3 +1,5 @@
+@use "../SASS-TOOLKIT/mixin" as *;
+
 //## COLORS
 
 //### Primary
@@ -16,9 +18,57 @@ $Magnolia: hsl(217, 100%, 97%);
 $Alabaster: hsl(231, 100%, 99%);
 $White: hsl(0, 0%, 100%);
 
-//RESPONSIVE FONTS
-$xs-res: clamp(10.5px, 1.5vw, 14px);
-$sm-res: clamp(12px, 1.7vw, 1rem);
-$ms-res: clamp(13px, 1.7vw, 17px);
-$m-res: clamp(14px, 1.7vw, 18px);
-$l-res: clamp(28px, 4vw, 2rem);
+//USE CSS VARIABLES BECAUSE I WANT THEM TO CHANGE ACCOURDING OT MEDIA
+:root{
+    //RESPONSIVE FONTS
+  --xs-res: clamp(10.5px, 1.5vw, 14px);
+  --sm-res: clamp(12px, 1.7vw, 1rem);
+  --ms-res: clamp(13px, 1.7vw, 17px);
+  --m-res: clamp(14px, 1.7vw, 18px);
+  --l-res: clamp(28px, 4vw, 2rem);
+
+  //RESPONSIVE PADDING
+  --p-Left-Hand: clamp(1rem, 10%, 2rem);
+  --p-Right-Hand: clamp(0px, calc(15% - 48px), 3rem) 0
+    clamp(1px, calc(4% - 9px), 1rem);
+  --p-Tile: clamp(10px, calc(8% - 23px), 1rem);
+  --p-Input: clamp(10px, calc(8% - 23px), 1rem);
+  --p-Main: 2rem;
+  --p-Container: 1rem;
+
+  //RESPONSIVE MARGIN
+  --m-b-Header: clamp(1rem, calc(37% - 137px), 3rem);
+  --m-t-Thankyou-h1: clamp(28px, 4vw, 2rem);
+  --m-b-Thankyou-h1: clamp(12px, 1.7vw, 1rem);
+
+
+  //RESPONSIVE GAP
+  --g-Card: clamp(1rem, 5vw, 3rem);
+}
+
+@media screen and (max-width: 700px) {
+    :root {
+      //RESPONSIVE FONTS
+      --xs-res: 14px;
+      --sm-res: clamp(14px, 3.8vw, 1rem);
+      --ms-res: clamp(16px, 4.2vw, 17px);
+      --m-res: clamp(17px, 4.6vw, 18px);
+      --l-res: clamp(25px, 6.7vw, 2rem);
+  
+      //RESPONSIVE PADDING
+      --p-Left-Hand: 2rem;
+      --p-Right-Hand: 3rem 1rem;
+      --p-Tile: 1rem;
+      --p-Input: 1rem;
+      --p-Main: clamp(1.5rem, 6.4vw, 2rem);
+      --p-Container: clamp(0px, calc(10vw - 34px), 1rem);
+      --p-Thankyou-Page: 3rem clamp(1.5rem, 6.4vw, 2rem);;
+  
+      //RESPONSIVE MARGIN
+      --m-b-Header: 1.5rem;
+      --m-t-Thankyou-h1: 2rem;
+      --m-b-Thankyou-h1: 1rem;
+    }
+
+    
+  }
