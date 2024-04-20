@@ -21,10 +21,13 @@
   --p-Input: clamp(10px, calc(8% - 23px), 1rem);
   --p-Main: 2rem;
   --p-Container: 1rem;
+  --p-ToogleBtn-Box: 1rem;
+  --p-Card: 1rem;
   --m-Header: clamp(1rem, 10vw - 54px, 3rem);
   --m-b-Footer: clamp(1px, 18% - 74px, 1rem);
   --m-t-Thankyou-h1: clamp(28px, 4vw, 2rem);
   --m-b-Thankyou-h1: clamp(12px, 1.7vw, 1rem);
+  --m-ToogleBtn-Box: 2.5rem;
   --g-Card: clamp(1rem, 5vw, 3rem);
 }
 
@@ -39,11 +42,14 @@
     --p-Tile: 1rem;
     --p-Input: 1rem;
     --p-Main: clamp(1.5rem, 6.4vw, 2rem);
-    --p-Container: clamp(0px, calc(10vw - 34px), 1rem);
+    --p-Container: unset;
+    --p-ToogleBtn-Box: .7rem;
+    --p-Card: .7rem;
     --m-b-Header: 1.5rem;
     --m-b-Footer: 0;
     --m-t-Thankyou-h1: 2rem;
     --m-b-Thankyou-h1: 1rem;
+    --m-ToogleBtn-Box: 1rem;
   }
 }
 * {
@@ -69,6 +75,11 @@
   font: var(--l-res) "Ubuntu-B";
   color: hsl(213, 96%, 18%);
   margin-bottom: 10px;
+}
+@media screen and (max-width: 700px) {
+  .Page .Container .Right-Hand main .Header h1, .Page .Container .Right-Hand main .Thankyou-Page h1 {
+    margin-bottom: 0px;
+  }
 }
 
 .Page .Container .Right-Hand main .Header p, .Page .Container .Right-Hand main .Thankyou-Page p {
@@ -103,7 +114,7 @@
 }
 @media screen and (max-width: 700px) {
   .Step-Indigator-Box .Icon {
-    width: 35px;
+    width: 40px;
   }
 }
 @media screen and (max-width: 700px) {
@@ -132,8 +143,7 @@
   margin-bottom: 10px;
   position: relative;
 }
-.Input-Box label::after {
-  content: "This field is required";
+.Input-Box label span {
   position: absolute;
   right: 0;
   color: hsl(354, 84%, 57%);
@@ -156,12 +166,15 @@
 .Input-Box input:hover {
   cursor: pointer;
 }
+.Input-Box input:invalid {
+  outline: 1px solid hsl(354, 84%, 57%);
+}
 
 .Card {
   border: 1px solid hsl(229, 24%, 87%);
   flex-grow: 1;
   flex-basis: 0;
-  padding: 1rem;
+  padding: var(--p-Card);
   border-radius: 7px;
   display: flex;
   flex-direction: column;
@@ -228,7 +241,7 @@
 .Page {
   min-height: 100vh;
   background: hsl(229, 24%, 87%);
-  padding: 0 1rem;
+  padding: 1rem;
 }
 @media screen and (max-width: 700px) {
   .Page {
@@ -271,21 +284,22 @@
     position: absolute;
     inset: 0 0 auto 0;
     z-index: 0;
-    height: 10rem;
+    height: 22vh;
   }
 }
 .Page .Container .Right-Hand {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  display: grid;
+  grid-template-rows: 1fr;
   width: 100%;
   max-width: 500px;
   margin: 0 auto;
 }
 @media screen and (max-width: 700px) {
   .Page .Container .Right-Hand {
-    padding: unset;
-    padding-top: 5rem;
+    padding: 13vh 0 0 0;
+    max-width: unset;
+    min-height: 100vh;
+    background: hsl(229, 24%, 87%);
   }
 }
 .Page .Container .Right-Hand main {
@@ -298,6 +312,11 @@
     padding: var(--p-Main);
     border-radius: 10px;
     z-index: 1;
+    justify-self: center;
+    max-width: 500px;
+    height: min-content;
+    margin: 0 1rem;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
   }
 }
 .Page .Container .Right-Hand main .Header {
@@ -313,9 +332,9 @@
   }
 }
 .Page .Container .Right-Hand main .Slide-Box .Slide-Two .ToogleBtn-Box {
-  margin-top: 2.5rem;
+  margin-top: var(--m-ToogleBtn-Box);
   width: 100%;
-  padding: 1rem;
+  padding: var(--p-ToogleBtn-Box);
   background: hsl(231, 100%, 99%);
   border-radius: 5px;
 }
@@ -409,8 +428,9 @@
   .Page .Container .Right-Hand .Footer {
     background: hsl(0, 0%, 100%);
     padding: 1rem;
-    position: absolute;
+    position: sticky;
     inset: auto 0 0 0;
+    z-index: 1;
   }
 }
 .Page .Container .Right-Hand .Footer :first-child, .Page .Container .Right-Hand .Footer :last-child {

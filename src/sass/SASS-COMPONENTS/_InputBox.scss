@@ -13,8 +13,7 @@
     margin-bottom: 10px;
     position: relative;
 
-    &::after {
-      content: "This field is required";
+    span {
       position: absolute;
       right: 0;
       color: $Strawberry-red;
@@ -40,6 +39,10 @@
 
     &:hover {
       cursor: pointer;
+    }
+
+    &:invalid{
+      outline: 1px solid $Strawberry-red;
     }
   }
 }

@@ -14,7 +14,7 @@
   @extend %center-item;
   min-height: 100vh;
   background: $Light-gray;
-  padding: 0 1rem;
+  padding: 1rem;
 
   @include Mobile {
     padding: 0;
@@ -56,23 +56,24 @@
         position: absolute;
         inset: 0 0 auto 0;
         z-index: 0;
-        height: 10rem;
+        height: 22vh;
       }
 
       //STEP COMPONENT
     }
 
     .Right-Hand {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+      display: grid;
+      grid-template-rows: 1fr;
       width: 100%;
       max-width: 500px;
       margin: 0 auto;
 
       @include Mobile {
-        padding: unset;
-        padding-top: 5rem;
+        padding: 13vh 0 0 0;
+        max-width: unset;
+        min-height: 100vh;
+        background: $Light-gray;
       }
 
       main {
@@ -84,6 +85,11 @@
           padding: var(--p-Main);
           border-radius: 10px;
           z-index: 1;
+          justify-self: center;
+          max-width: 500px;
+          height: min-content;
+          margin: 0 1rem;
+          box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
         }
 
         .Header {
@@ -114,10 +120,10 @@
             }
 
             .ToogleBtn-Box {
-              margin-top: 2.5rem;
+              margin-top: var(--m-ToogleBtn-Box);
               @extend %center-item;
               width: 100%;
-              padding: 1rem;
+              padding: var(--p-ToogleBtn-Box);
               background: $Alabaster;
               border-radius: 5px;
 
@@ -250,8 +256,9 @@
         @include Mobile {
           background: hsl(0, 0%, 100%);
           padding: 1rem;
-          position: absolute;
+          position: sticky;
           inset: auto 0 0 0;
+          z-index: 1;
         }
 
         & :first-child,

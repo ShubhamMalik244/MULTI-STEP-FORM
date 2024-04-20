@@ -33,12 +33,15 @@ $White: hsl(0, 0%, 100%);
   --p-Input: clamp(10px, calc(8% - 23px), 1rem);
   --p-Main: 2rem;
   --p-Container: 1rem;
+  --p-ToogleBtn-Box: 1rem;
+  --p-Card: 1rem;
 
   //RESPONSIVE MARGIN
   --m-Header: clamp(1rem, 10vw - 54px, 3rem);
   --m-b-Footer: clamp(1px, 18% - 74px, 1rem);
   --m-t-Thankyou-h1: clamp(28px, 4vw, 2rem);
   --m-b-Thankyou-h1: clamp(12px, 1.7vw, 1rem);
+  --m-ToogleBtn-Box: 2.5rem;
 
 
   //RESPONSIVE GAP
@@ -59,13 +62,16 @@ $White: hsl(0, 0%, 100%);
       --p-Tile: 1rem;
       --p-Input: 1rem;
       --p-Main: clamp(1.5rem, 6.4vw, 2rem);
-      --p-Container: clamp(0px, calc(10vw - 34px), 1rem);
+      --p-Container: unset; //clamp(0px, calc(10vw - 34px), 1rem);
+      --p-ToogleBtn-Box: .7rem;
+      --p-Card: .7rem;
   
       //RESPONSIVE MARGIN
       --m-b-Header: 1.5rem;
       --m-b-Footer: 0;
       --m-t-Thankyou-h1: 2rem;
       --m-b-Thankyou-h1: 1rem;
+      --m-ToogleBtn-Box: 1rem;
     }
 
     

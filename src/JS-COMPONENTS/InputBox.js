@@ -1,8 +1,8 @@
-function InputBox({label, placeholder}){
+function InputBox({label, placeholder, type, isEmpty, isInvalide = false, pattern}){
     return(
        <div className="Input-Box">
-       <label>{label}</label>
-       <input type="text" placeholder={placeholder}></input>
+       <label>{label}{(isEmpty || isInvalide) && <span>This field is required</span>}</label>
+       <input type={type} placeholder={placeholder} pattern={pattern}></input>
        </div>
     )
 }

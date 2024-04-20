@@ -19,6 +19,10 @@
   @include fonting(var(--l-res), "Ubuntu-B");
   color: $Marine-blue;
   margin-bottom: 10px;
+
+  @include Mobile{
+    margin-bottom: 0px;
+  }
 }
 
 %slide-para {
