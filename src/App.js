@@ -119,6 +119,8 @@ function App() {
     setStep(2);
   }
 
+  //MOVE FORWARD AND BACKWARD
+
   function nextStep() {
     let next = 1;
 
@@ -346,14 +348,18 @@ function App() {
                         Total {sub === "monthly" ? "(per month)" : "(per year)"}
                       </span>
                       <span>
-                        {
-                          "$" +
-                            (card.currentPrice.slice(0, -3).slice(1) * 1 +
-                              ((tile.tile1.active === "on")? (tile.tile1.price.slice(0, -3).slice(2) * 1): 0) +
-                              ((tile.tile2.active === "on")? (tile.tile2.price.slice(0, -3).slice(2) * 1): 0) +
-                              ((tile.tile3.active === "on")? (tile.tile3.price.slice(0, -3).slice(2) * 1): 0)) +
-                              (sub === "monthly" ? "/mo" : "/yr")
-                        }
+                        {"$" +
+                          (card.currentPrice.slice(0, -3).slice(1) * 1 +
+                            (tile.tile1.active === "on"
+                              ? tile.tile1.price.slice(0, -3).slice(2) * 1
+                              : 0) +
+                            (tile.tile2.active === "on"
+                              ? tile.tile2.price.slice(0, -3).slice(2) * 1
+                              : 0) +
+                            (tile.tile3.active === "on"
+                              ? tile.tile3.price.slice(0, -3).slice(2) * 1
+                              : 0)) +
+                          (sub === "monthly" ? "/mo" : "/yr")}
                       </span>
                     </div>
                   </section>
@@ -379,8 +385,12 @@ function App() {
               <button type="button" onClick={backStep}>
                 Go Back
               </button>
-              <button className={(step >= 4)? 'Confirm-btn': ''} type="button" onClick={nextStep}>
-                {(step >= 4)? 'Confirm': 'Next Step'}
+              <button
+                className={step >= 4 ? "Confirm-btn" : ""}
+                type="button"
+                onClick={nextStep}
+              >
+                {step >= 4 ? "Confirm" : "Next Step"}
               </button>
             </div>
           )}
