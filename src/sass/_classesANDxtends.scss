@@ -5,8 +5,41 @@
   display: none !important;
 }
 
-.Hr-line{
+.Hr-line {
   border: 1px solid $Light-gray;
+}
+
+.Active-step {
+  color: $Marine-blue !important;
+  background: $Light-blue;
+}
+
+.Card-selected {
+  outline: 1px solid $Purplish-blue;
+  background: $Alabaster;
+}
+
+.Toggle-btn{
+  transform: translateX(150%);
+}
+
+.AddonTile-selected{
+  border-color: $Purplish-blue !important;
+  background-color: $Alabaster;
+
+  .Tick-mark{
+    background: url("/public/assets/images/icon-checkmark.svg") center/12px
+      no-repeat blue;
+  }
+}
+
+.Confirm-btn{
+  color: $White !important;
+  background: $Purplish-blue !important;
+
+  &:hover{
+    background: lighten($Purplish-blue, 10%) !important;
+  }
 }
 
 //EXTENDS
@@ -20,7 +53,7 @@
   color: $Marine-blue;
   margin-bottom: 10px;
 
-  @include Mobile{
+  @include Mobile {
     margin-bottom: 0px;
   }
 }
@@ -29,12 +62,12 @@
   @include fonting(var(--m-res), "Ubuntu-R");
   color: $Cool-gray;
 
-  @include Mobile{
+  @include Mobile {
     line-height: 1.5rem;
   }
 }
 
-%gap-bw{
+%gap-bw {
   display: flex;
   justify-content: space-between;
   align-items: center;

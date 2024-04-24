@@ -3,21 +3,26 @@
 
 .Tile {
   border: 1px solid $Light-gray;
-  outline: 1px solid $Purplish-blue;
   border-radius: 7px;
   margin-bottom: 1rem;
   padding: var(--p-Tile);
   display: grid;
   grid-template-columns: min-content 1fr min-content;
   align-items: center;
-  background: $Alabaster;
+  cursor: pointer;
+  position: relative;
+
+  &::before{
+    content: '';
+    position: absolute;
+    inset: 0 0 0 0;
+}
 
   .Tick-mark {
     border-radius: 4px;
+    border: inherit;
     width: clamp(1rem, calc(10vw - 54px), 1.2rem);
     aspect-ratio: 1/1;
-    background: url("/public/assets/images/icon-checkmark.svg") center/12px
-      no-repeat blue;
     margin-right: 1rem;
     
   }
