@@ -8,7 +8,7 @@ import { useState } from "react";
 
 function App() {
 
-  //VARIABLES --------------------------->>
+  //VARIABLES --------------------------->>>
   const [step, setStep] = useState(1);
 
   const [inputError, setInputEroor] = useImmer({
