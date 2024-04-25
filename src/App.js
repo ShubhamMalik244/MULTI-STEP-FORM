@@ -7,16 +7,37 @@ import { useImmer } from "use-immer";
 import { useState } from "react";
 
 function App() {
+
+  //VARIABLES --------------------------->>
   const [step, setStep] = useState(1);
 
-  //STPE ONE INPUT LOGIC
   const [inputError, setInputEroor] = useImmer({
     text: { empty: false, invalide: false },
     email: { empty: false, invalide: false },
     phone: { empty: false, invalide: false },
   });
+
   const [inputvalue, setInputValue] = useState(["", "", ""]);
 
+  const [card, setCard] = useImmer({
+    currentPlan: "Arcade",
+    currentPrice: "$9/mo",
+  });
+
+  const [toggle, setToggle] = useState(false);
+  
+  const [sub, setSub] = useState("monthly");
+
+  const [tile, setTile] = useImmer({
+    tile1: { active: "off", price: "$1/mo" },
+    tile2: { active: "off", price: "$2/mo" },
+    tile3: { active: "off", price: "$2/mo" },
+  });
+
+
+
+
+  //FUNCTIONS --------------------------------->>
   function isInputError() {
     const textInput = document.querySelector('input[type="text"]');
     const emailInput = document.querySelector('input[type="email"]');
@@ -55,14 +76,6 @@ function App() {
     }
   }
 
-  //STEP TWO CARD LOGIC
-  const [card, setCard] = useImmer({
-    currentPlan: "Arcade",
-    currentPrice: "$9/mo",
-  });
-  const [toggle, setToggle] = useState(false);
-  const [sub, setSub] = useState("monthly");
-
   function handelCardClick(e) {
     setCard((draft) => {
       draft.currentPlan = e.target.childNodes[1].firstChild.innerText;
@@ -98,13 +111,6 @@ function App() {
     }
   }
 
-  //STEP THREE ADD-ON-TILE LIGIC
-  const [tile, setTile] = useImmer({
-    tile1: { active: "off", price: "$1/mo" },
-    tile2: { active: "off", price: "$2/mo" },
-    tile3: { active: "off", price: "$2/mo" },
-  });
-
   function handelAddonClick(e) {
     setTile((draft) => {
       draft[e.target.id].active =
@@ -113,13 +119,9 @@ function App() {
     });
   }
 
-  //STEP FOUR FINISHING TABLE
-
   function changePlan() {
     setStep(2);
   }
-
-  //MOVE FORWARD AND BACKWARD
 
   function nextStep() {
     let next = 1;
@@ -151,6 +153,11 @@ function App() {
     }
   }
 
+
+
+
+
+  //CONTENT ------------------------------------>>
   return (
     <div className="Page">
       <div className="Container">
